@@ -17,37 +17,28 @@ def find_max(numbers):
             maximum = num
     return maximum
 
-# ---- Funciones a implementar ----
-
 def range_of(numbers):
-    """
-    Retorna la diferencia entre el maximo y el minimo de la lista.
-    Debe USAR las funciones find_min y find_max.
-
-    Ejemplo: range_of([3, 1, 7, 2]) -> 6  (7 - 1)
-    """
-    return "ANSWER HERE"  # Remove this line and implement
-
+    return find_max(numbers) - find_min(numbers)
 
 def average(numbers):
-    """
-    Retorna el promedio de los numeros en la lista, redondeado a 1 decimal.
-    Si la lista esta vacia, retorna 0.0.
-    Usar un bucle for para sumar los elementos.
-
-    Ejemplo: average([10, 20, 30]) -> 20.0
-    """
-    return "ANSWER HERE"  # Remove this line and implement
-
+    if len(numbers) == 0:
+        avg = 0.0
+    else:
+        total = 0
+        for number in numbers:
+            total += number
+        avg = round(total / len(numbers), 1)
+    return avg
 
 def describe(numbers):
-    """
-    Retorna un string con el formato:
-    "Min:{min} Max:{max} Range:{range} Avg:{avg}"
+    if len(numbers) == 0:
+        description = "Empty list"
+    else:
+        description = (
+            "Min:" + str(find_min(numbers)) +
+            " Max:" + str(find_max(numbers)) +
+            " Range:" + str(range_of(numbers)) +
+            " Avg:" + str(average(numbers))
+        )
+    return description
 
-    Debe USAR las funciones find_min, find_max, range_of y average.
-    Si la lista esta vacia, retorna "Empty list".
-
-    Ejemplo: describe([3, 1, 7, 2]) -> "Min:1 Max:7 Range:6 Avg:3.2"
-    """
-    return "ANSWER HERE"  # Remove this line and implement

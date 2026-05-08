@@ -1,7 +1,13 @@
 # Replace the "ANSWER HERE" for your answer
 
 def find_min(numbers):
-    """
+    minimum = numbers[0]
+    for num in numbers:
+        if num < minimum:
+            minimum = num
+    return minimum
+
+"""
     Dada una lista de numeros (no vacia), retorna el menor valor.
     Usar un bucle for para recorrer la lista.
 
@@ -9,11 +15,15 @@ def find_min(numbers):
     Ejemplo: find_min([5, 5, 5]) -> 5
     Ejemplo: find_min([-3, -1, -7]) -> -7
     """
-    return "ANSWER HERE"  # Remove this line and implement
-
 
 def find_max(numbers):
-    """
+    maximo = numbers[0]
+    for num in numbers:
+        if num > maximo:
+            maximo = num
+    return maximo
+
+"""
     Dada una lista de numeros (no vacia), retorna el mayor valor.
     Usar un bucle for para recorrer la lista.
 
@@ -21,11 +31,16 @@ def find_max(numbers):
     Ejemplo: find_max([5, 5, 5]) -> 5
     Ejemplo: find_max([-3, -1, -7]) -> -1
     """
-    return "ANSWER HERE"  # Remove this line and implement
 
 
 def count_negatives(numbers):
-    """
+    cantidad = 0
+    for num in numbers:
+        if num < 0:
+            cantidad += 1
+    return cantidad
+
+"""
     Dada una lista de numeros, retorna la cantidad de numeros negativos.
     Si la lista esta vacia, retorna 0.
 
@@ -33,4 +48,4 @@ def count_negatives(numbers):
     Ejemplo: count_negatives([1, 2, 3]) -> 0
     Ejemplo: count_negatives([-1, -2, -3]) -> 3
     """
-    return "ANSWER HERE"  # Remove this line and implement
+
